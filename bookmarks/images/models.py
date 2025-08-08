@@ -8,10 +8,10 @@ class Image(models.Model):
         related_name='images_created',
         on_delete=models.CASCADE
     )
-    title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200,blank=True)
+    title = models.CharField(max_length=500)
+    slug = models.SlugField(max_length=500,blank=True)
     url = models.URLField(max_length=2000)
-    image = models.ImageField(upload_to='images/%Y/%m/%d/')
+    image = models.ImageField(upload_to='images/%Y/%m/%d/', max_length=500)
     description = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     users_like = models.ManyToManyField(

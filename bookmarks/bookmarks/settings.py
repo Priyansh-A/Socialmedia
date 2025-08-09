@@ -45,10 +45,12 @@ INSTALLED_APPS = [
     'images.apps.ImagesConfig',
     'actions.apps.ActionsConfig',
     'easy_thumbnails',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -169,3 +171,7 @@ if DEBUG:
 ABSOLUTE_URL_OVERRIDES ={
     'auth.user': lambda u: reverse_lazy('user_detail', args = [u.username])
 }
+
+INTERNAL_IPS = [
+'127.0.0.1',
+]

@@ -204,3 +204,4 @@ __marimo__/
 *.key
 *.crt
 # this might be it 
+*.md
